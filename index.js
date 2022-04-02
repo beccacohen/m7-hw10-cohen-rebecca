@@ -41,6 +41,7 @@ clear.onclick = function() {
   // Clear textarea's value
   // Clear localstorage's content
   // YOUR CODE HERE
+  localStorage.clear()
   // triggers thumbs up animation
   this.classList.add('emoji')
 }
