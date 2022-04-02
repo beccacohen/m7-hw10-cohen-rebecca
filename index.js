@@ -15,15 +15,28 @@ cookieStore.get('span')
     }
 
   })
+
+
+var note = localStorage.getItem('text')
+
+if (note) {
+  textarea.textContent = note
+}
+
 formEl.onsubmit = function(e) {
   // prevents form submission
   e.preventDefault()
   // save name element's content to cookies
   // save textarea's content to localstorage
   // YOUR CODE HERE
+  form = textarea.value
+  localStorage.setItem('text', form)
+
+
   // triggers thumbs up animation
   this.elements.save.classList.add('emoji')
 }
+
 clear.onclick = function() {
   // Clear textarea's value
   // Clear localstorage's content
@@ -31,10 +44,12 @@ clear.onclick = function() {
   // triggers thumbs up animation
   this.classList.add('emoji')
 }
+
 // this code allows repeated thumbs up animations
 function endThumbsUp() {
   this.classList.remove('emoji')
 }
+
 formEl.elements.save.onanimationend = endThumbsUp
 clear.onanimationend = endThumbsUp
 
